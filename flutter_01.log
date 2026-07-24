@@ -1,0 +1,110 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter build apk --release
+
+## exception
+
+ProcessException: ProcessException: Process exited abnormally with exit code 1:
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Cannot locate tasks that match 'app:tasks' as project 'app' not found in root project 'android'.
+
+* Try:
+> Run gradlew projects to get a list of available projects.
+> For more on name expansion, please refer to https://docs.gradle.org/8.4/userguide/command_line_interface.html#sec:name_abbreviation in the Gradle documentation.
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 1s
+  Command: C:\Users\ibadn\OneDrive\İş masası\FLUTTERAPP\android\gradlew.bat app:tasks --all --console=auto
+
+```
+#0      RunResult.throwException (package:flutter_tools/src/base/process.dart:153:5)
+#1      _DefaultProcessUtils.run (package:flutter_tools/src/base/process.dart:379:19)
+<asynchronous suspension>
+#2      flavorUndefinedHandler.<anonymous closure> (package:flutter_tools/src/android/gradle_errors.dart:232:38)
+<asynchronous suspension>
+#3      AndroidGradleBuilder._runGradleTask (package:flutter_tools/src/android/gradle.dart:376:40)
+<asynchronous suspension>
+#4      AndroidGradleBuilder.buildGradleApp (package:flutter_tools/src/android/gradle.dart:572:26)
+<asynchronous suspension>
+#5      AndroidGradleBuilder.buildApk (package:flutter_tools/src/android/gradle.dart:236:5)
+<asynchronous suspension>
+#6      BuildApkCommand.runCommand (package:flutter_tools/src/commands/build_apk.dart:132:5)
+<asynchronous suspension>
+#7      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1630:27)
+<asynchronous suspension>
+#8      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#9      CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#10     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9)
+<asynchronous suspension>
+#11     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#12     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+<asynchronous suspension>
+#13     FlutterCommandRunner.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:307:33)
+<asynchronous suspension>
+#14     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:104:11)
+<asynchronous suspension>
+#15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#16     main (package:flutter_tools/executable.dart:103:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[!] Flutter (Channel stable, 3.44.8, on Microsoft Windows [Version 10.0.26200.8655], locale en-CA) [1,112ms]
+    • Flutter version 3.44.8 on channel stable at C:\src\flutter
+    ! The flutter binary is not on your path. Consider adding C:\src\flutter\bin to your path.
+    ! The dart binary is not on your path. Consider adding C:\src\flutter\bin to your path.
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 058e0af2c2 (24 hours ago), 2026-07-23 10:56:21 -0700
+    • Engine revision 0cd610717b
+    • Dart version 3.12.2
+    • DevTools version 2.57.0
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, enable-swift-package-manager, omit-legacy-version-file, enable-lldb-debugging, enable-uiscene-migration
+    • If those were intentional, you can disregard the above warnings; however it is recommended to use "git" directly to perform update checks and upgrades.
+
+[✓] Windows Version (Windows 11 or higher, 25H2, 2009) [2.4s]
+
+[!] Android toolchain - develop for Android devices (Android SDK version 35.0.0) [5.6s]
+    • Android SDK at C:\Android\Sdk
+    • Emulator version unknown
+    ✗ Flutter requires Android SDK 36 and the Android BuildTools 28.0.3
+      To update the Android SDK visit https://flutter.dev/to/windows-android-setup for detailed instructions.
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web [641ms]
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[!] Visual Studio - develop Windows apps (SQL Server Management Studio 22 22.2.1) [637ms]
+    • Visual Studio at C:\Program Files\Microsoft SQL Server Management Studio 22\Release
+    • SQL Server Management Studio 22 version 22.2.11415.280
+    • Windows 10 SDK version 10.0.26100.0
+    ✗ Visual Studio is missing necessary components. Please re-run the Visual Studio installer for the "Desktop development with C++" workload, and include these components:
+        MSVC v142 - VS 2019 C++ x64/x86 build tools
+         - If there are multiple build tool versions available, install the latest
+        C++ CMake tools for Windows
+        Windows 10 SDK
+
+[✓] Connected device (3 available) [430ms]
+    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [Version 10.0.26200.8655]
+    • Chrome (web)      • chrome  • web-javascript • Google Chrome 150.0.7871.182
+    • Edge (web)        • edge    • web-javascript • Microsoft Edge 150.0.4078.83
+
+[✓] Network resources [909ms]
+    • All expected network resources are available.
+
+! Doctor found issues in 3 categories.
+```
